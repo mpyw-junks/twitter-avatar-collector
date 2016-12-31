@@ -1,0 +1,2 @@
+# twitter-avatar-collectors
+ランダムなタイムラインからTwitterのアイコン画像を収集します
