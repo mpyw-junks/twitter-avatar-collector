@@ -1,0 +1,25 @@
+{
+    "name": "mpyw/twitter-avatar-collector",
+    "description": "ランダムなタイムラインからTwitterのアイコン画像を収集します",
+    "type": "project",
+    "require": {
+        "php": ">=5.6",
+        "mpyw/cowitter": "^1.0",
+        "kevinlebrun/colors.php": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "mpyw\\TwitterAvatarCollector\\Commands\\": "commands/"
+        }
+    },
+    "scripts": {
+        "download-images": "mpyw\\TwitterAvatarCollector\\Commands\\DownloadImagesCommand::download"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mpyw",
+            "email": "ryosuke_i_628@yahoo.co.jp"
+        }
+    ]
+}
