@@ -13,7 +13,7 @@
         }
     },
     "scripts": {
-        "download-images": "mpyw\\TwitterAvatarCollector\\Commands\\DownloadImagesCommand::download"
+        "download-images": "mpyw\\TwitterAvatarCollector\\Commands\\DownloadImagesCommand::downloadAsync"
     },
     "license": "MIT",
     "authors": [
