@@ -11,6 +11,12 @@ use mpyw\Co\Co;
 
 class DownloadImagesCommand
 {
+    protected $theme = [
+        'danger' => ['red'],
+        'warning' => ['magenta'],
+        'info' => ['cyan'],
+        'success' => ['green'],
+    ];
     protected $event;
     protected $argc;
     protected $argv;
@@ -25,8 +31,6 @@ class DownloadImagesCommand
      */
     public static function __callStatic($method, array $args)
     {
-        // コマンド消去
-        echo "\033[1A\033[2K";
         // 初期化処理
         $instance = new static(...$args);
         // 本処理の実行
@@ -47,21 +51,27 @@ class DownloadImagesCommand
         $this->color = new Color;
 
         // テーマの設定
-        $this->color->setTheme([
-            'danger' => ['red'],
-            'warning' => ['magenta'],
-            'info' => ['cyan'],
-            'success' => ['green'],
-        ]);
+        $this->color->setTheme($this->theme);
+
+        $this->initializeTerminal();
+    }
+
+    /**
+     * ターミナル画面を初期化します
+     */
+    protected function initializeTerminal()
+    {
+        // コマンド消去
+        echo "\033[1A\033[2K";
 
         // ロゴの表示
         $c = $this->color;
-        echo $c("\n****************************************\n")->green;
-        echo $c("*                                      *\n")->green;
-        echo $c("*    Twitter Avatar Collector Wizard   *\n")->green;
-        echo $c("*                                      *\n")->green;
-        echo $c("****************************************\n\n")->green;
-        echo $c("Please input <warning>Ctrl + C</warning> when you want to abort.\n\n")->colorize();
+        echo $c("\n****************************************\n")->success;
+        echo $c("*                                      *\n")->success;
+        echo $c("*    Twitter Avatar Collector Wizard   *\n")->success;
+        echo $c("*                                      *\n")->success;
+        echo $c("****************************************\n\n")->success;
+        echo $c("Please input {$c('Ctrl + C')->warning} when you want to abort.\n\n");
     }
 
     /**
