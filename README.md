@@ -22,3 +22,19 @@ PowerShellまたはコマンドプロンプトを作業場所で起動
 4. `composer download-images`
 
 ![Example](https://cloud.githubusercontent.com/assets/1351893/21580381/b6ed321e-d034-11e6-8abe-349bd0098e6e.png)
+
+### `SSL certificate problem`
+
+もしXAMPPを利用していて `SSL certificate problem` と表示される場合，以下の手順に従って最新の証明書をインストールしてください。
+
+1. `cacert.pem` を [cURL公式](https://curl.haxx.se/docs/caextract.html) からダウンロード
+2. `C:\xampp\cacert.pem` など，適当な場所に設置
+3. `C:\xampp\php\php.ini` を以下のように書き換える
+
+```
+;curl.cainfo =
+```
+↓
+```ini
+curl.cainfo = "C:\xampp\cacert.pem"
+```
