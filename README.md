@@ -18,6 +18,7 @@ PowerShellまたはコマンドプロンプトを作業場所で起動
 
 1. `git clone https://github.com/mpyw-yattemita/twitter-avatar-collector`
 2. `cd twitter-avatar-collector`
-3. `composer download-images`
+3. `composer install`
+4. `composer download-images`
 
 ![Example](https://cloud.githubusercontent.com/assets/1351893/21580381/b6ed321e-d034-11e6-8abe-349bd0098e6e.png)
